@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ScalaProject.ParentModule.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ScalaProject_ParentModule_main_jar</output-path>
+    <root id="archive" name="ScalaProject.ParentModule.main.jar">
+      <element id="module-output" name="ScalaProject.ParentModule.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.12/bf5534e6fec3d665bd6419c952a929a8bdd4b591/scala-library-2.11.12.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
