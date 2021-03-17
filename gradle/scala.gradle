@@ -11,7 +11,6 @@ configurations {
 }
 
 dependencies {
-    implementation 'org.scala-lang:scala-library:2.11.12'
     scala211 'org.scala-lang:scala-library:2.11.12'
 }
 
@@ -29,14 +28,18 @@ compileTestScala.enabled = false
 
 jar.enabled = false
 
-//assemble.dependsOn compileScala211MainScala
-
 task scala211Jar(type: Jar) {
     from sourceSets.scala211Main.output
+    archiveBaseName = "${archivesBaseName}_2.11"
 }
 
 artifacts {
     scala211(scala211Jar)
 }
 
-assemble.dependsOn scala211Jar
+ext.enable = {
+    configurations {
+        compile.extendsFrom scala211
+    }
+    assemble.dependsOn scala211Jar
+}

@@ -1,9 +1,5 @@
 apply from: '../gradle/scala.gradle'
-
+ext.enable()
 dependencies {
     scala211(project(path: ':ParentModule', configuration: 'scala211'))
-}
-
-configurations {
-    compile.extendsFrom scala211
 }
