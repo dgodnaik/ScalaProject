@@ -1,0 +1,42 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'scala'
+apply plugin: 'java'
+
+configurations {
+    scala211
+    scala211MainCompile.extendsFrom scala211
+}
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.11.12'
+    scala211 'org.scala-lang:scala-library:2.11.12'
+}
+
+sourceSets {
+    scala211Main {
+        resources.srcDirs main.resources
+        java.srcDirs main.java.srcDirs
+        scala.srcDirs main.scala.srcDirs
+    }
+}
+
+compileJava.enabled = false
+compileScala.enabled = false
+compileTestScala.enabled = false
+
+jar.enabled = false
+
+//assemble.dependsOn compileScala211MainScala
+
+task scala211Jar(type: Jar) {
+    from sourceSets.scala211Main.output
+}
+
+artifacts {
+    scala211(scala211Jar)
+}
+
+assemble.dependsOn scala211Jar

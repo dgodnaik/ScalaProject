@@ -1,0 +1,4 @@
+apply from: '../gradle/scala.gradle'
+configurations {
+    compile.extendsFrom scala211
+}

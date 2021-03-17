@@ -1,0 +1,4 @@
+rootProject.name = 'ScalaProject'
+include 'ParentModule'
+include 'ChildModule'
+
